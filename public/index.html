@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starter Kit - Building an Amazing Web App</title>
-    <link rel="icon" type="icon" href="/images/favicon.ico">
+    <link rel="icon" type="icon" href="assets/images/favicon.ico">
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="stylesheets/font-awesome.css" rel="stylesheet" />
-    <link href="stylesheets/main-style.css" rel="stylesheet" />
+    <link href="assets/stylesheets/font-awesome.css" rel="stylesheet" />
+    <link href="assets/stylesheets/main-style.css" rel="stylesheet" />
   </head>
   <body ng-controller="mainController">
     <!--[if lt IE 9]>
@@ -29,14 +29,21 @@
 
       <div class="row">
         <div class="col-sm-12">
-          <img src="images/cute_dog.jpg">
+          <img src="assets/images/cute_dog.jpg">
         </div>
       </div>
+
+      <a ui-sref="hello" ui-sref-active="active">Hello</a>
+      <a ui-sref="about" ui-sref-active="active">About</a>
+
+      <ui-view></ui-view>
     </div>
 
     <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="js/controllers/main.js"></script>
     <script type="text/javascript" src="js/core.js"></script>
   </body>
 </html>
