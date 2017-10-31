@@ -1,5 +1,11 @@
-angular.module('mainApp', ['ui.router', 'mainPageController'])
+angular.module('mainApp', ['ui.router', 'homePageController'])
   .config(function($stateProvider) {
+    var homeState = {
+      name: 'home',
+      url: '',
+      templateUrl: 'views/home.html'
+    }
+
     var helloState = {
       name: 'hello',
       url: '/hello',
@@ -12,6 +18,7 @@ angular.module('mainApp', ['ui.router', 'mainPageController'])
       templateUrl: 'views/about.html'
     }
 
+    $stateProvider.state(homeState);
     $stateProvider.state(helloState);
     $stateProvider.state(aboutState);
   });
