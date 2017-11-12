@@ -1,4 +1,4 @@
-angular.module('mainApp', ['ui.router', 'homePageController'])
+angular.module('mainApp', ['ui.router', 'homePageController', 'navbar'])
   .config(function($locationProvider, $stateProvider) {
     $locationProvider.html5Mode(true);
     var homeState = {
