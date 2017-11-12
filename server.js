@@ -5,9 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-// var routes = require('./routes/index');
-var routes = require('./app/routes.js');
-
 var app = express();
 
 // uncomment after placing your favicon in /public
@@ -19,8 +16,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components', express.static(path.join(__dirname, '/bower_components')));
 app.use('/assets', express.static(path.join(__dirname, '/assets')));
+app.use('/', function(req, res) {
+ res.sendfile('./public/index.html');
+});
 
-app.use('/', routes);
+app.get('/api/data', function (req, res) {
+  res.send('hello world')
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
