@@ -20,10 +20,6 @@ app.use('/', function(req, res) {
  res.sendfile('./public/index.html');
 });
 
-app.get('/api/data', function (req, res) {
-  res.send('hello world')
-});
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
