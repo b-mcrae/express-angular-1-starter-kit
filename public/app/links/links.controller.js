@@ -14,4 +14,10 @@ angular.module('linksPageController', [])
         link: 'http://www.facebook.com'
       }
     ];
+
+    $http.get('https://dog.ceo/api/breeds/list').then(function(response) {
+      $scope.dogs = response.data.message;
+    }, function(err) {
+      throw new Error(err);
+    });
   });
