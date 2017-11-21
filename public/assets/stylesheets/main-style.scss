@@ -22,3 +22,9 @@ body {
     margin-bottom: 10px;
   }
 }
+
+@import '../../app/about/about.scss';
+@import '../../app/account/account.scss';
+@import '../../app/home/home.scss';
+@import '../../app/links/links.scss';
+@import '../../components/navbar/navbar.scss';

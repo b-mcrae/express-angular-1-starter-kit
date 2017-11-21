@@ -11,3 +11,9 @@ Express and Angular 1.x Starter Kit
 3. Run `npm start` to start the server.
 
 4. In your browser, navigate to localhost:3000.
+
+### For development
+
+1. Run `npm run dev`.
+
+2. Run `sass --watch public/assets/stylesheets`.
