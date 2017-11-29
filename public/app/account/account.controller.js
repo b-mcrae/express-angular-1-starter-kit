@@ -1,4 +1,6 @@
-angular.module('accountPageController', [])
+import angular from 'angular';
+
+export default angular.module('accountPageController', [])
   .controller('accountController', function($scope, $http) {
     $scope.userInfo = {
       name: 'Brian',

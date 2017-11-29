@@ -16,4 +16,6 @@ Express and Angular 1.x Starter Kit
 
 1. Run `npm run dev`.
 
-2. Run `sass --watch public/assets/stylesheets`.
+2. Run `webpack public/entry-app.js public/bundle.js`.
+
+3. Run `sass --watch public/assets/stylesheets`.

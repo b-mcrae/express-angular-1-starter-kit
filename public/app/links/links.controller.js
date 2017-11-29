@@ -1,4 +1,6 @@
-angular.module('linksPageController', [])
+import angular from 'angular';
+
+export default angular.module('linksPageController', [])
   .controller('linksController', function($scope, $http) {
     $scope.links = [
       {
