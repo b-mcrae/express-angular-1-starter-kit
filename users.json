@@ -1,0 +1,31 @@
+[{
+	"id": 1,
+	"first_name": "Brian",
+	"last_name": "Mehe",
+	"email": "brian@octo.com",
+	"phone": "123-456-6789"
+}, {
+	"id": 2,
+	"first_name": "John",
+	"last_name": "Smith",
+	"email": "john@hello.com",
+	"phone": "123-456-6789"
+}, {
+	"id": 3,
+	"first_name": "Apple",
+	"last_name": "Orange",
+	"email": "waronlove@cent.com",
+	"phone": "123-456-6789"
+}, {
+	"id": 4,
+	"first_name": "Justin",
+	"last_name": "Oh",
+	"email": "interesting@interesting.com",
+	"phone": "123-456-6789"
+}, {
+	"id": 5,
+	"first_name": "Rita",
+	"last_name": "Meep",
+	"email": "weethebest@friend.net",
+	"phone": "123-456-6789"
+}]

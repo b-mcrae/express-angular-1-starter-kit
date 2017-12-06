@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var _ = require('underscore');
+var users = require('./users.json');
 
 var app = express();
 
@@ -16,8 +18,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components', express.static(path.join(__dirname, '/bower_components')));
 app.use('/assets', express.static(path.join(__dirname, '/assets')));
-app.use('/', function(req, res) {
+app.get('/', function(req, res) {
  res.sendfile('./public/index.html');
+});
+
+app.get('/users', function (req, res) {
+  res.send(users);
+});
+
+app.get('/users/:id', function (req, res) {
+  res.send(_.findWhere(users, { id: Number(req.params.id) }));
 });
 
 // catch 404 and forward to error handler
