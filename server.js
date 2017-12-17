@@ -22,11 +22,11 @@ app.get('/', function(req, res) {
  res.sendfile('./public/index.html');
 });
 
-app.get('/users', function (req, res) {
+app.get('/api/users', function (req, res) {
   res.send(users);
 });
 
-app.get('/users/:id', function (req, res) {
+app.get('/api/users/:id', function (req, res) {
   res.send(_.findWhere(users, { id: Number(req.params.id) }));
 });
 

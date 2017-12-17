@@ -1,0 +1,7 @@
+<div ng-controller="usersController">
+  <ul>
+    <li ng-repeat="user in users">
+      <a ui-sref="user({id: user.id})">{{user.first_name}}</a>
+    </li>
+  <ul>
+</div>

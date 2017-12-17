@@ -12,8 +12,10 @@ import navbar from './components/navbar/navbar.component.js';
 import homePageController from './app/home/home.controller.js';
 import linksPageController from './app/links/links.controller.js';
 import accountPageController from './app/account/account.controller.js';
+import usersPageController from './app/users/users.controller.js';
+import userPageController from './app/user/user.controller.js';
 
-angular.module('mainApp', [uirouter, 'navbar', 'homePageController', 'linksPageController', 'accountPageController'])
+angular.module('mainApp', [uirouter, 'navbar', 'homePageController', 'linksPageController', 'accountPageController', 'usersPageController', 'userPageController'])
   .config(function($locationProvider, $stateProvider) {
     $locationProvider.html5Mode(true);
     var homeState = {
@@ -40,8 +42,22 @@ angular.module('mainApp', [uirouter, 'navbar', 'homePageController', 'linksPageC
       templateUrl: 'app/account/account.template.html'
     }
 
+    var usersState = {
+      name: 'users',
+      url: '/users',
+      templateUrl: 'app/users/users.template.html'
+    }
+
+    var userState = {
+      name: 'user',
+      url: '/user/{id}',
+      templateUrl: 'app/user/user.template.html'
+    }
+
     $stateProvider.state(homeState);
     $stateProvider.state(linksState);
     $stateProvider.state(aboutState);
     $stateProvider.state(accountState);
+    $stateProvider.state(usersState);
+    $stateProvider.state(userState);
   });

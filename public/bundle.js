@@ -87,6 +87,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_home_home_controller_js__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_links_links_controller_js__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_account_account_controller_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_users_users_controller_js__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_user_user_controller_js__ = __webpack_require__(10);
 
 
 // TODO: Figure out how to import these.
@@ -102,7 +104,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_1_angular___default.a.module('mainApp', [__WEBPACK_IMPORTED_MODULE_2_angular_ui_router___default.a, 'navbar', 'homePageController', 'linksPageController', 'accountPageController'])
+
+
+__WEBPACK_IMPORTED_MODULE_1_angular___default.a.module('mainApp', [__WEBPACK_IMPORTED_MODULE_2_angular_ui_router___default.a, 'navbar', 'homePageController', 'linksPageController', 'accountPageController', 'usersPageController', 'userPageController'])
   .config(function($locationProvider, $stateProvider) {
     $locationProvider.html5Mode(true);
     var homeState = {
@@ -129,10 +133,24 @@ __WEBPACK_IMPORTED_MODULE_1_angular___default.a.module('mainApp', [__WEBPACK_IMP
       templateUrl: 'app/account/account.template.html'
     }
 
+    var usersState = {
+      name: 'users',
+      url: '/users',
+      templateUrl: 'app/users/users.template.html'
+    }
+
+    var userState = {
+      name: 'user',
+      url: '/user/{id}',
+      templateUrl: 'app/user/user.template.html'
+    }
+
     $stateProvider.state(homeState);
     $stateProvider.state(linksState);
     $stateProvider.state(aboutState);
     $stateProvider.state(accountState);
+    $stateProvider.state(usersState);
+    $stateProvider.state(userState);
   });
 
 
@@ -39118,6 +39136,44 @@ angular.module('ui.router.state')
       if ($scope.formData.userBirthDate) $scope.userInfo.birthDate = $scope.formData.userBirthDate;
       if ($scope.formData.gender) $scope.userInfo.gender = $scope.formData.gender;
     };
+  }));
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('usersPageController', [])
+  .controller('usersController', function($scope, $http) {
+    $http.get('http://localhost:3000/api/users').then(function(response) {
+      $scope.users = response.data;
+    }, function(err) {
+      throw new Error(err);
+    });
+  }));
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
+
+
+/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('userPageController', [])
+  .controller('userController', function($scope, $http) {
+    // $http.get('http://localhost:3000/api/users').then(function(response) {
+    //   $scope.users = response.data;
+    // }, function(err) {
+    //   throw new Error(err);
+    // });
   }));
 
 
